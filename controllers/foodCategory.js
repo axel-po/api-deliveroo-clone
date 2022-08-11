@@ -11,7 +11,7 @@ exports.createCategory = (req, res, next) => {
 
   const category = new FoodCategory({
     ...categoryObject,
-    imageUrl: `${req.protocol}://${req.get("host")}/images/${req.file.filename}`,
+    imageUrl: `images/foodCat/${req.file.filename}`,
   });
 
   category

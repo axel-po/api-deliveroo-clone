@@ -17,7 +17,7 @@ exports.createRestaurants = (req, res, next) => {
 
   const restaurants = new Restaurants({
     ...restaurantObject,
-    imageUrl: `${req.protocol}://${req.get("host")}/images/${req.file.filename}`,
+    imageUrl: `images/restaurants/${req.file.filename}`,
   });
 
   restaurants
@@ -30,7 +30,7 @@ exports.modifyRestaurant = (req, res, next) => {
   const restaurantObject = req.file
     ? {
         ...JSON.parse(req.body.data),
-        imageUrl: `${req.protocol}://${req.get("host")}/images/${req.file.filename}`,
+        imageUrl: `images/restaurants/${req.file.filename}`,
       }
     : { ...req.body };
 

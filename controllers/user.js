@@ -1,6 +1,7 @@
 const bcrypt = require("bcrypt");
 const User = require("../models/User");
 const jwt = require("jsonwebtoken");
+const secrets = require("../config/secrets.js");
 
 exports.signup = (req, res, next) => {
   bcrypt
@@ -19,7 +20,7 @@ exports.signup = (req, res, next) => {
             userId: user._id,
             name: user.name,
             email: user.email,
-            token: jwt.sign({ userId: user._id }, "RANDOM_TOKEN_SECRET", { expiresIn: "24h" }),
+            token: jwt.sign({ userId: user._id }, "eyJ1c2VySWQiOiI2MmYxODRhMzljY2JlNWIzMTc5NTgzMTIiLCJpYXQiOjE2NjAwNDI3MTQs", { expiresIn: "24h" }),
           })
         )
         .catch((error) => res.status(404).json({ error }));
@@ -44,7 +45,7 @@ exports.login = (req, res, next) => {
             userId: user._id,
             name: user.name,
             email: user.email,
-            token: jwt.sign({ userId: user._id }, "RANDOM_TOKEN_SECRET", { expiresIn: "24h" }),
+            token: jwt.sign({ userId: user._id }, "eyJ1c2VySWQiOiI2MmYxODRhMzljY2JlNWIzMTc5NTgzMTIiLCJpYXQiOjE2NjAwNDI3MTQs", { expiresIn: "24h" }),
           });
         })
         .catch((error) => res.status(500).json({ error }));

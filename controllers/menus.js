@@ -17,7 +17,7 @@ exports.createMenu = (req, res, next) => {
 
   const menu = new Menus({
     ...menuObject,
-    imageUrl: `${req.protocol}://${req.get("host")}/images/${req.file.filename}`,
+    imageUrl: `images/menus/${req.file.filename}`,
   });
 
   menu
@@ -30,7 +30,7 @@ exports.modifyMenu = (req, res, next) => {
   const menuObject = req.file
     ? {
         ...JSON.parse(req.body.data),
-        imageUrl: `${req.protocol}://${req.get("host")}/images/${req.file.filename}`,
+        imageUrl: `images/menus/${req.file.filename}`,
       }
     : { ...req.body };
 
