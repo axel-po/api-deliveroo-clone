@@ -17,11 +17,9 @@ Création d'une API avec Node JS afin de lier les données au front de ce projet
 - CRUD (POST, GET, PUT, DELETE)
 
 
-## Installation
+## Deployment
 
-- Cloner le projet
-- Run npm install
-- npm start
+Déploiement de l'API en production sur Heroku.
 
 
 
