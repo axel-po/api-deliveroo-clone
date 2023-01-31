@@ -19,7 +19,7 @@ Création d'une API avec Node JS afin de lier les données au front de ce projet
 
 ## Deployment
 
-Déploiement de l'API en production sur Heroku.
+Déploiement de l'API en production sur Render.
 
 
 
